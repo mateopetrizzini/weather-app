@@ -1,0 +1,59 @@
+.card{
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+
+    color: white;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    justify-content: center;
+    
+    min-height: 250px;
+
+    box-shadow: 0 8px, 20px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.card-header{
+
+    width: 100%;
+
+    text-align: center;
+}
+
+.card-header h2{
+    margin: 0;
+
+    font-size: 18px;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.card-body img{
+    width: 70px;
+}
+
+.card-body h1{
+    font-size: 36px;
+
+    margin: 10px 0;
+}
+
+.card-body p{
+    margin: 5px 0;
+}
+
+.time{
+
+    font-size: 14px;
+
+    opacity: 0.8;
+}
