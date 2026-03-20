@@ -68,7 +68,14 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
+
+      <div className="cloud cloud1"></div>
+      <div className="cloud cloud2"></div>
+      <div className="cloud cloud3"></div>
+
+
+      <div className="header">
       <h1>Weather App</h1>
 
       <div className="search-container" ref={searchRef}>
@@ -118,6 +125,8 @@ function App() {
 
       </div>
 
+
+      <div className="buttons">
       <button onClick={handleAddCity}>
         Agregar 
       </button>
@@ -125,6 +134,9 @@ function App() {
       <button onClick={handleGetLocation}>
         Usar mi ubicacion
       </button>
+      </div>
+
+      </div>
 
       <AnimatePresence>
       <div className="cards-container">

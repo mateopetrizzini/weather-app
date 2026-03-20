@@ -1,9 +1,14 @@
 .card{
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+   
+    width: 100%;
 
-    color: white;
+    position: relative;
 
-    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.6);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
 
     padding: 20px;
 
@@ -11,13 +16,61 @@
     
     min-height: 250px;
 
-    box-shadow: 0 8px, 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(236, 72, 153, 0.2);
+
+    box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+     0 0px 20px rgba(236, 72, 153, 0.15);
+
+    transition: all 0.3s ease;
+
+    cursor: pointer;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
+
+        color: white;
+
+        overflow: hidden;
+}
+
+.card:hover{
+
+    transform: translateY(-6px) scale(1.02);
+
+    border: 1px solid rgba(236, 72, 153, 0.6);
+
+    box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 0px 40px rgba(236, 72, 153, 0.5);
+}
+
+.card::before{
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        120deg,
+        rgba(136, 72, 153, 0.15),
+        rgba(168, 85, 247, 0.15)
+    );
+
+    opacity: 0.6;
+
+    z-index: 0;
+}
+
+.card > *{
+    position: relative;
+    z-index: 1;
 }
 
 .card-header{
@@ -56,4 +109,14 @@
     font-size: 14px;
 
     opacity: 0.8;
+}
+
+@media (max-width: 500px){
+    .card-body h1{
+        font-size: 28px;
+    }
+
+    .header h1{
+        font-size: 24px;
+    }
 }

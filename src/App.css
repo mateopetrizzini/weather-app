@@ -1,7 +1,96 @@
+#root{
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+
+  font-family: sans-serif;
+
+  background: radial-gradient(circle at top, #1a1a2e, #0f172a);
+
+  color: white;
+}
+.app{
+  min-height: 100vh;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background: radial-gradient(
+    circle at 30% 80%,
+    rgba(172, 7, 92, 0.15),
+    transparent 40%
+  ),
+  radial-gradient(
+    circle at 70% 20%,
+    rgba(108, 35, 182, 0.15),
+    transparent 40%
+  ),
+  radial-gradient(
+    circle at 50% 100%,
+    rgba(202, 100, 5, 0.12),
+    transparent 50%
+  ),
+  linear-gradient(
+    180deg,
+    #d46802,
+    #bb058d,
+    #09057e   
+  );
+
+  position: relative;
+  overflow: hidden;
+}
+
+.header{
+
+  z-index:1;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.header h1{
+  text-align: center;
+
+  font-size: 32px;
+
+  font-weight: 600;
+}
+
+h1{
+  margin-bottom: 20px;
+}
+
 .search-container{
   position: relative;
 
-  width: 300px;
+  margin-bottom: 20px;
+
+  width: 100%;
 
   margin: auto;
 }
@@ -50,6 +139,8 @@
   padding: 10px;
 
   cursor: pointer;
+
+  color: black;
 }
 
 .suggestions li:hover{
@@ -58,9 +149,13 @@
 
 .cards-container{
 
+  z-index:1;
+
   display: grid;
 
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+
+  justify-content: center;
 
   gap: 20px;
 
@@ -69,4 +164,112 @@
   max-width: 1000px;
 
   margin: 0 auto;
+
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+button{
+
+  flex: 1;
+
+  min-width: 140px;
+
+  padding: 8px 12px;
+
+  margin: 5px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #a855f7;
+
+  color: white;
+
+  cursor: pointer;
+
+  justify-content: center;
+
+  
+}
+
+button:hover{
+  background: #9333ea;
+}
+
+
+.cloud{
+  position: absolute;
+
+  width: 200px;
+
+  height: 80px;
+
+  background: rgba(255, 200, 150, 0.2);
+
+  border-radius: 50%;
+
+  filter: blur(15px);
+
+  animation: float 30s linear infinite; 
+
+  z-index: 0;
+}
+
+.cloud1{
+
+  top: 20%;
+
+  left: -150px;
+
+  animation-duration: 60s;
+
+ filter: blur(10px);
+}
+
+.cloud2{
+
+  top: 50%;
+
+  left:-300px;
+
+  width: 250px;
+
+  height:100px;
+
+  animation-duration: 80s;
+
+   filter: blur(15px);
+ 
+}
+
+.cloud3{
+
+  top:70%;
+
+  left:-250px;
+
+  width:180px;
+
+  height:70px;
+
+  animation-duration:100s;
+
+   filter: blur(12px);
+
+}
+
+@keyframes float{
+  from { transform: translateX(0);}
+  to { transform: translateX(120vw);}
 }

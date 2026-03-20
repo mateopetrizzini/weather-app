@@ -1,4 +1,5 @@
 import {motion} from "framer-motion";
+import"./WeatherCard.css"
 
 function WeatherCard({weather}) {
 
