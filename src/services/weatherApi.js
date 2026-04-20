@@ -32,3 +32,12 @@ export async function getCitySuggestions(query){
     const data = await response.json();
     return data;
 }
+
+export async function getForecast(lat, lon) {
+    const apiKey = API_KEY;
+    const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+    )
+
+    return res.json();
+}

@@ -111,6 +111,12 @@
     opacity: 0.8;
 }
 
+.extra {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
 @media (max-width: 500px){
     .card-body h1{
         font-size: 28px;
