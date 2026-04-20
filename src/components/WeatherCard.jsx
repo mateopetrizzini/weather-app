@@ -2,6 +2,7 @@ import {motion} from "framer-motion";
 import"./WeatherCard.css"
 import { useState } from "react";
 import { getForecast } from "../services/weatherApi";
+import {WiHumidity, WiStrongWind, WiBarometer} from "react-icons/wi"
 
 function WeatherCard({weather}) {
 
@@ -63,26 +64,74 @@ function WeatherCard({weather}) {
       animate={{opacity:1}}
       >
 
+        <div className="extra-grid">
 
-        <p>Sensación: {Math.round(weather.main.feels_like)}°C</p>
-        <p>Humedad: {weather.main.humidity}%</p>
-        <p>Viento: {weather.wind.speed} km/h</p>
+          <div className="extra-item">
+            <span>Sensación</span>
+            <strong>{Math.round(weather.main.feels_like)}°C</strong>
+          </div>
+
+          <div className="extra-item">
+            <WiHumidity size={20}/>
+            <span>Humedad</span>
+            <strong>{weather.main.humidity}%</strong>
+          </div>
+
+          <div className="extra-item">
+            <WiStrongWind size={20}/>
+            <span>Viento</span>
+            <strong>{weather.wind.speed} km/h</strong>
+          </div>
+
+          <div className="extra-item">
+            <WiBarometer size={20}/>
+            <span>Presión</span>
+            <strong>{weather.main.pressure} hPa</strong>
+          </div>
+
+          <div className="extra-item">
+            <span>Visibilidad</span>
+            <strong>{weather.visibility / 1000} km</strong>
+          </div>
+
+        </div>
+
         
         <p className="time">{getLocalTime()}</p>
 
+
+        <div className="sun-section">        
         <p>Amanecer: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</p>
         <p>Atardecer: {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</p>
-        <p>Presión: {weather.main.pressure} hPa</p>
-        <p>Visibildad: {weather.visibility / 1000} km</p>
+        </div>
 
         {forecast && (
-          <div className="forecast">
-            {forecast.list.slice(0, 5).map((item,i)=>(
-              <div key={i} className="forecast-item">
-                <p>{new Date(item.dt * 1000).getHours()}:00</p>
-                <p>{Math.round(item.main.temp)}°C</p>
-                </div>
-            ))}
+          <div className="forecast-container">
+
+            <h3 className="forecast-title">Pronóstico próximas horas</h3>
+
+            <div className="forecast">
+              {forecast.list.slice(0, 5).map((item, i) =>{
+                const icon = `https://openweathermap.org/img/wn/${item.weather[0].icon}.png`
+
+                return (
+                  <div key={i} className="forecast-item">
+                    <p className="hour">
+                      {new Date(item.dt * 1000).getHours()}:00
+                    </p>
+
+                    <img src={icon} alt="icon" />
+
+                    <p className="temp">
+                      {Math.round(item.main.temp)}°C
+                    </p>
+                  </div>
+                )
+              })}
+
+            </div>
+
+          
           </div>
         )}
 
