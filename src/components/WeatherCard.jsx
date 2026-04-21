@@ -3,6 +3,7 @@ import"./WeatherCard.css"
 import { useState } from "react";
 import { getForecast } from "../services/weatherApi";
 import {WiHumidity, WiStrongWind, WiBarometer} from "react-icons/wi"
+import { Clock } from "lucide-react";
 
 function WeatherCard({weather}) {
 
@@ -46,16 +47,17 @@ function WeatherCard({weather}) {
 
       </div>
 
-     <div>
+     <div className="main-info">
     <img src={icon} alt="icon"/>
     <p>Temp</p>
     <h1>{Math.round(weather.main.temp)}°C</h1>
-
-    <p>Clima: {weather.weather[0].description}</p>
-
- 
+      <Clock size={16}/>
+    <span className="time">{getLocalTime()}</span>
 
     </div>
+
+         <p className="weather-desc">Clima: {weather.weather[0].description}</p>
+
 
     {expanded &&(
       <motion.div
@@ -97,7 +99,7 @@ function WeatherCard({weather}) {
         </div>
 
         
-        <p className="time">{getLocalTime()}</p>
+
 
 
         <div className="sun-section">        

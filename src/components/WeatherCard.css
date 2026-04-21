@@ -118,20 +118,9 @@
 
 .card.expanded { 
 
-    max-height: 500px;
-
-    overflow: hidden;
-
     transform: none;
 
     z-index: 1;
-}
-
-.card.expanded .extra {
-
-    max-height: 50vh;
-
-    overflow-y: auto;
 }
 
 .cards-container:has(.card.expanded) .card:not(.expanded){
@@ -238,17 +227,16 @@
 .extra {
     margin-top: 10px;
 
-    height: 100%;
+    height: auto;
 
     font-size: 14px;
 
     opacity: 0.9;
 
-    max-height: 300px;
+    max-height: none;
 
-    overflow-y: auto;
-
-    padding-right: 5px;
+    overflow: visible;
+    
 }
 
 .extra-grid {
@@ -304,6 +292,50 @@
     opacity: 0.9;
 }
 
+.main-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.main-info h1 {
+
+    font-size: 36px;
+
+    margin: 5px 0;
+}
+
+.time {
+
+    display: flex;
+
+    font-size: 15px;
+
+    align-items: center;
+
+    border-radius: 10px;
+
+    padding: 4px 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    opacity:0.85;
+
+    margin-top: 5px;
+
+    gap: 6px;
+}
+
+.weather-desc {
+
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
 
 
 @media (max-width: 600px){
@@ -328,7 +360,17 @@
     }
 
     .card {
+
+        width: 90%;
+
         padding:15px
+    }
+
+    .cards-container {
+
+        flex-direction: column;
+
+        align-items: center;
     }
 
 }
