@@ -141,3 +141,17 @@
 .cards-container:has(.card.expanded) .card:not(.expanded){
     opacity: 0.5;
 }
+
+
+@media (max-width: 600px){
+
+    .card {
+
+        width: 95%;
+
+        padding: 15px;
+
+        border-radius: 16px;
+    }
+
+}

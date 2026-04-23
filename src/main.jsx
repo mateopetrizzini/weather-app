@@ -9,6 +9,7 @@ import "./styles/components/forecast.css"
 import "./styles/components/search.css"
 import "./styles/components/extra.css"
 import "./styles/components/buttons.css"
+import "./styles/components/astronomy.css"
 import "./styles/animations/clouds.css"
 
 

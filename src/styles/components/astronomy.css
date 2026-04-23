@@ -1,0 +1,130 @@
+.astronomy{
+    width: 100%;
+
+    margin-top: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:18px;
+}
+
+.moon-block{
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255, 0.06);
+}
+
+.moon-phase {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+
+  
+
+}
+
+.moon-phase:hover {
+    transform: scale(1.02);
+}
+
+.moon-bar {
+
+    width: 100%;
+
+    height: 8px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.1);
+
+    overflow: hidden;
+}
+
+.moon-fill {
+
+    height:100%;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,200,0.2),
+        rgba(255,255,200,0.9)
+    );
+
+    transition: width 0.4s ease;
+
+}
+
+.sun-section {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    justify-content: space-around;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+.sun-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.sun-item span {
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+.sun-item strong {
+    font-size:16px;
+}
+
+
+@keyframes glowPulse {
+    0%, 100% {filter: brightness(1);}
+    50% {filter: brightness(1.3);}
+}
