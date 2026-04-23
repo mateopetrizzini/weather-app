@@ -2,9 +2,9 @@
   min-height: 100vh;
 
   width: 100%;
-  max-width: 1200px;
+  max-width: none;
 
-  margin: 0 auto;
+  margin: 0;
 
   display: flex;
 
@@ -46,7 +46,7 @@
 
   width: 100%;
 
-  max-width: 500px;
+  max-width: 600px;
 
   display: flex;
 
@@ -56,7 +56,7 @@
 
   gap: 15px;
 
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 .header h1{
@@ -68,9 +68,17 @@
 }
 
 .cards-container {
-    display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
 }
 
 @media (max-width: 600px) {
@@ -87,4 +95,12 @@
     grid-template-columns: 1fr;
   }
   
+}
+
+@media (min-width: 1600px) {
+
+  .cards-container {
+    max-width: 1600px;
+  }
+
 }
