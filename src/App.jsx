@@ -88,6 +88,7 @@ function App() {
       value={query}
       onKeyDown={(e)=> {
         if(e.key=== "Enter") handleAddCity();
+        searchRef.current?.querySelector("input")?.blur();
       }}
 
       onChange={ async (e) => {
@@ -115,6 +116,8 @@ function App() {
             setCities((prev)=> [...prev, data]);
             setSuggestions([]);
             setQuery("");
+
+            searchRef.current?.querySelector("input")?.blur();
           }}>
             {city.name}, {city.country} 
           </li>

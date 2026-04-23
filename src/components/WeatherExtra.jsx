@@ -19,6 +19,16 @@ function WeatherExtra({ weather }) {
             <strong> {weather.wind.speed} km/h</strong>
         </div>
 
+        <div className="extra-item">
+            <span>Presión</span>
+            <strong> {weather.main.pressure} hPa</strong>
+        </div>
+
+        <div className="extra-item">
+            <span>Visibilidad</span>
+            <strong> {weather.visibility / 1000} km</strong>
+        </div>
+
     </div>
   );
 }
