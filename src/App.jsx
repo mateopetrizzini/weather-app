@@ -15,6 +15,7 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
 
   const searchRef = useRef();
+  const inputRef = useRef();
 
 
   useEffect(()=>{
@@ -83,12 +84,15 @@ function App() {
       
 
       <input 
+      ref={inputRef}
       type="text"
       placeholder="Buscar ciudad..."
       value={query}
       onKeyDown={(e)=> {
-        if(e.key=== "Enter") handleAddCity();
-        searchRef.current?.querySelector("input")?.blur();
+        if(e.key=== "Enter") {
+          handleAddCity();
+        inputRef.current?.blur();
+        }
       }}
 
       onChange={ async (e) => {
@@ -109,7 +113,7 @@ function App() {
       {suggestions.length > 0 &&(
         <ul className="suggestions">
           {suggestions.map((city,index)=>(
-            <li
+            <li           
             key={index}
             onClick={async ()=> {
             const data = await getWeatherByCoords(city.lat, city.lon);
@@ -117,7 +121,7 @@ function App() {
             setSuggestions([]);
             setQuery("");
 
-            searchRef.current?.querySelector("input")?.blur();
+            inputRef.current?.blur();
           }}>
             {city.name}, {city.country} 
           </li>
