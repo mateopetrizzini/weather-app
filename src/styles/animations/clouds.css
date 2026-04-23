@@ -1,0 +1,65 @@
+.cloud{
+  position: absolute;
+
+  width: 200px;
+
+  height: 80px;
+
+  background: rgba(255, 200, 150, 0.2);
+
+  border-radius: 50%;
+
+  filter: blur(15px);
+
+  animation: float 30s linear infinite; 
+
+  z-index: 0;
+}
+
+.cloud1{
+
+  top: 20%;
+
+  left: -150px;
+
+  animation-duration: 60s;
+
+ filter: blur(10px);
+}
+
+.cloud2{
+
+  top: 50%;
+
+  left:-300px;
+
+  width: 250px;
+
+  height:100px;
+
+  animation-duration: 80s;
+
+   filter: blur(15px);
+ 
+}
+
+.cloud3{
+
+  top:70%;
+
+  left:-250px;
+
+  width:180px;
+
+  height:70px;
+
+  animation-duration:100s;
+
+   filter: blur(12px);
+
+}
+
+@keyframes float{
+  from { transform: translateX(0);}
+  to { transform: translateX(120vw);}
+}

@@ -1,0 +1,38 @@
+.buttons {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+button{
+
+  flex: 1;
+
+  min-width: 140px;
+
+  padding: 8px 12px;
+
+  margin: 5px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #a855f7;
+
+  color: white;
+
+  cursor: pointer;
+
+  justify-content: center;
+
+  
+}
+
+button:hover{
+  background: #9333ea;
+}

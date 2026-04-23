@@ -41,3 +41,14 @@ export async function getForecast(lat, lon) {
 
     return res.json();
 }
+
+export async function getAstronomy(city) {
+
+    const API_KEY = import.meta.env.VITE_WEATHERAPI_KEY;
+    const res = await fetch(
+        `https://api.weatherapi.com/v1/astronomy.json?key=${API_KEY}&q=${city}`
+    );
+
+    const data = await res.json();
+    return data;
+}
